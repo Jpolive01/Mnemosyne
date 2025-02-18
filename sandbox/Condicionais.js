@@ -156,17 +156,21 @@
 
 //Avancado
 //Exercicio 1
-let num1 = prompt("Insira Medida")
-let num2 = prompt("Insira Medida")
-let num3 = prompt("Insira Medida")
+//let num1 = prompt("Insira Medida")
+//let num2 = prompt("Insira Medida")
+//let num3 = prompt("Insira Medida")
 
-if (num1 = num2 && num2 == num3 ) {
-    console.log("Triângulo Equilátero")
-} else {
-if (num1 == num2 && num1 != num3 && num2 == num3 )    
-}   
-
+//if (num1 = num2 && num2 == num3 ) {
+//    console.log("Triângulo Equilátero")
+//} else 
+//if (num1 == num2 && num1 != num3 && num2 == num3 ) { 
+//  console.log("Triângulo Isóceles")
+//} else
+//if (num1 != num2 && num2 != num3) {
+//    console.log("Triângulo Escaleno")
+//}
 
 //Exercicio 2
+
 //Exercicio 3
 //Exercicio 4
