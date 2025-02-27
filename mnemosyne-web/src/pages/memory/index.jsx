@@ -15,7 +15,9 @@ const Memory = () => {
 
         const memoryId = urlsearch.get("id");
 
-        getMemory(memoryId)
+        getMemory(memoryId);
+
+        document.title = "Tela de Detalhes";
 
     }, []);
 
