@@ -3,30 +3,30 @@ import Header from "../../components/header";
 import "./home.css";
 import memory from "../../services/memory";
 
-
 const Home = () => {
 
-    const [memories, setMemories] = useState([]);
+    const [memories, setMemories] = useState([]); 
 
     useEffect(() => {
-
+        // Este método é executado toda vez que a tela inicia.
         getMemoriesList();
 
     }, []);
 
-    const getMemoriesList = async () => {
+    const getMemoriesList = async  () => {
 
         const lista = await memory.getMemories();
 
         console.log("Lista: ", lista);
 
         setMemories(lista);
+
     }
 
     return (
         <>
-
-            <Header></Header>     
+            
+            <Header></Header>
 
             <main className="app-main">
 
@@ -49,7 +49,7 @@ const Home = () => {
                             </div>
 
                         </a>
-                    
+
                     ))}
 
                 </div>
@@ -58,7 +58,7 @@ const Home = () => {
 
             <footer className="app-footer">
 
-                <p>Mnemosyne - João Pedro da Silva Olivé</p>
+                <p>Mnemosyne - Ariel Paixão dos Santos</p>
 
             </footer>
         </>

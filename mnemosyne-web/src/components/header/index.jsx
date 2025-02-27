@@ -2,20 +2,20 @@ import logo from "../../assets/icons/mnemosyne-logo.svg";
 
 const Header = () => {
 
-return (
-    <header className="app-header">
+    return (
 
-                <img src={logo} alt="Mnemosyne Logo"></img>
+        <header className="app-header">
 
-                <div className="links">
-                    <a href="#">HOME</a>
-                    <a href="#">ADICIONAR MEMÓRIA</a>
-                </div>
+            <img src={logo} alt="Mnemosyne Logo"></img>
 
-            </header>
-);
+            <div className="links">
+                <a href="/home">HOME</a>
+                <a href="/new-memory">ADICIONAR MEMÓRIA</a>
+            </div>
 
+        </header>
 
+    );
 
 }
 

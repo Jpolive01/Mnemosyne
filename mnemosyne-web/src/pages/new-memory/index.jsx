@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "../../components/header";
 import memory from "../../services/memory";
+import "./new-memory.css";
 
 const NewMemory = () => {
 
@@ -14,25 +15,24 @@ const NewMemory = () => {
 
     const onSetImage = (event) => {
 
-        console.log("CHEGOU ATÉ AQUI.")
-
-        const files = event.target.files;
+        // Ao selecionar uma image, execute aqui...
+        const files = event.target.files; // Pega os arquivos inseridos.
         setImages(files);
 
+        // Gerar as thumbnails das imagens para mostrar na tela.
         for (let contador = 0; contador < files.length; contador++) {
-
-
 
             const file = files[contador];
 
-            const thumbnail = URL.createObjectURL(file);
+            const thumbnail = URL.createObjectURL(file); // Criar a thumbnail.
 
-            imageURLs.push(thumbnail);
+            imageURLs.push(thumbnail); // Acrescenta na lista.
 
         }
 
     }
 
+    // Função assíncrona para criar uma nova memória
     const onCreateMemory = async () => {
         let payload = {
             title: title, // Título da memória
@@ -43,11 +43,13 @@ const NewMemory = () => {
 
         let response = await memory.createMemory(payload); // Envia os dados para o serviço
 
-        if (response) { // Se a resposta for bem-sucedida
+        if (response != null) { // Se a resposta for bem-sucedida
             setUserFeedBack("Memória criada com sucesso!"); // Exibe um feedback positivo
 
             setTimeout(() => {
+            
                 setUserFeedBack(""); // Limpa o feedback após 5 segundos
+
             }, 5000);
 
             // Reseta os campos do formulário
@@ -84,14 +86,15 @@ const NewMemory = () => {
                         <span className="input-file-button">Adicionar imagem</span>
                         <input onChange={event => onSetImage(event)} id="file-input" type="file" multiple />
                         <span className="no-images">Nenhuma imagem no momento.</span>
-                        <div className="images-container"></div>
+                        <div className="images-container">
 
-                        {imageURLs.map((imageURL, index) => (
+                            {imageURLs.map((imageURL, index) => (
 
-                            <div key={index} className="image" style={{ backgroundImage: `url(${imageURL})` }}></div>
+                                <div key={index} className="image" style={{ backgroundImage: `url(${imageURL})` }}></div>
 
-                        ))}
+                            ))}
 
+                        </div>
                     </label>
                 </div>
 
@@ -103,9 +106,8 @@ const NewMemory = () => {
             </footer>
 
         </>
-
-
     );
+
 };
 
 export default NewMemory;
