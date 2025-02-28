@@ -60,7 +60,7 @@ const Home = () => {
 
             <footer className="app-footer">
 
-                <p>Mnemosyne - Ariel Paixão dos Santos</p>
+                <p>Mnemosyne - João Pedro Olivé</p>
 
             </footer>
         </>
